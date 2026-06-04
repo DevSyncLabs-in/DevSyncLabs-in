@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="chat.png" alt="DevSyncLabs" style="max-width: 100%;" />
+  <img src="Chat.png" alt="DevSyncLabs" style="max-width: 100%;" />
 </h1>
 
 <p align="center">

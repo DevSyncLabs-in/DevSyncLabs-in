@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D5616AQEy3X17Bom1Ww/profile-displaybackgroundimage-shrink_350_1400/B56ZbX6HnYHUAc-/0/1747379060860?e=1752710400&v=beta&t=Ax1WedKbrkbmn9VYWA6crzlrzHNRmBgb5_mcs5PS-Vg" alt="DevSyncLabs" style="max-width: 100%;" />
+  <img src="/chat.png" alt="DevSyncLabs" style="max-width: 100%;" />
 </h1>
 
 <p align="center">

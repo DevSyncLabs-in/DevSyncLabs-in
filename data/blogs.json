@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with IoT using ESP32 and MQTT",
+    "excerpt": "Learn how to build your first IoT project with ESP32 microcontroller, connect sensors, and send real-time data to the cloud using the MQTT protocol.",
+    "author": "DevSync Team",
+    "date": "2026-06-01",
+    "category": "IoT",
+    "readTime": "5 min",
+    "image": "assets/blog-iot.png",
+    "slug": "getting-started-iot-esp32",
+    "content": "<p>The Internet of Things (IoT) is revolutionizing how we interact with the physical world. In this comprehensive guide, we'll walk you through building your very first IoT project using the popular ESP32 microcontroller.</p><h3>What You'll Need</h3><ul><li>ESP32 Development Board</li><li>DHT22 Temperature & Humidity Sensor</li><li>Breadboard and jumper wires</li><li>Micro USB cable</li><li>Arduino IDE or PlatformIO</li></ul><h3>Setting Up the ESP32</h3><p>The ESP32 is a powerful, low-cost microcontroller with built-in Wi-Fi and Bluetooth capabilities. It's perfect for IoT projects because it can connect to the internet directly without any additional hardware.</p><p>First, install the ESP32 board package in your Arduino IDE. Go to <code>File > Preferences</code> and add the ESP32 board manager URL. Then navigate to <code>Tools > Board > Board Manager</code> and search for ESP32.</p><h3>Connecting the DHT22 Sensor</h3><p>Wire the DHT22 sensor to your ESP32: connect VCC to 3.3V, GND to GND, and the DATA pin to GPIO 4. Add a 10kΩ pull-up resistor between VCC and DATA for stable readings.</p><h3>MQTT Protocol</h3><p>MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol perfect for IoT. It uses a publish/subscribe model where devices publish data to topics, and subscribers receive updates in real-time.</p><p>We'll use a free MQTT broker like HiveMQ or Mosquitto to handle our messages. The ESP32 will publish temperature and humidity data every 5 seconds to the broker.</p><h3>Next Steps</h3><p>Once you have the basics working, you can expand your project by adding more sensors, creating a web dashboard to visualize data, or setting up alerts when values exceed thresholds. The possibilities are endless with IoT!</p>"
+  },
+  {
+    "id": 2,
+    "title": "Deploying Microservices with Kubernetes and ArgoCD",
+    "excerpt": "A step-by-step guide to deploying containerized microservices on Kubernetes clusters using GitOps principles with ArgoCD for continuous delivery.",
+    "author": "DevSync Team",
+    "date": "2026-05-25",
+    "category": "Cloud",
+    "readTime": "8 min",
+    "image": "assets/blog-cloud.png",
+    "slug": "deploying-microservices-kubernetes",
+    "content": "<p>Kubernetes has become the de facto standard for container orchestration, and when combined with ArgoCD's GitOps approach, you get a powerful, declarative deployment pipeline that's both reliable and auditable.</p><h3>Understanding GitOps</h3><p>GitOps is an operational framework that takes DevOps best practices and applies them to infrastructure automation. The core idea is simple: your Git repository is the single source of truth for your infrastructure and application configurations.</p><h3>Setting Up Your Cluster</h3><p>Start by provisioning a Kubernetes cluster. You can use managed services like AWS EKS, Azure AKS, or Google GKE. For local development, <code>minikube</code> or <code>kind</code> work great.</p><h3>Containerizing Your App</h3><p>Write a multi-stage Dockerfile to keep your images lean. Build and push your container images to a registry like Docker Hub, AWS ECR, or GitHub Container Registry.</p><h3>Kubernetes Manifests</h3><p>Create your deployment, service, and ingress manifests. Use Kustomize or Helm for templating across environments (dev, staging, production). Store all manifests in a dedicated Git repository.</p><h3>Installing ArgoCD</h3><ul><li>Install ArgoCD on your cluster using the official manifests</li><li>Configure the ArgoCD CLI and access the web UI</li><li>Create an Application resource pointing to your Git repo</li><li>Set sync policies for automated or manual deployments</li></ul><h3>Continuous Delivery Flow</h3><p>With ArgoCD watching your Git repository, any change to your Kubernetes manifests automatically triggers a sync. ArgoCD detects drift between the desired state in Git and the actual state in the cluster, then reconciles the differences.</p><p>This GitOps approach gives you complete audit trails, easy rollbacks (just revert a commit), and confidence that what's in Git is what's running in production.</p>"
+  },
+  {
+    "id": 3,
+    "title": "Building AI-Powered Chatbots with LangChain and OpenAI",
+    "excerpt": "Discover how to create intelligent conversational AI chatbots using LangChain framework, OpenAI's GPT models, and retrieval-augmented generation (RAG).",
+    "author": "DevSync Team",
+    "date": "2026-05-18",
+    "category": "AI",
+    "readTime": "7 min",
+    "image": "assets/blog-ai.png",
+    "slug": "building-ai-chatbots-langchain",
+    "content": "<p>Generative AI has transformed how businesses interact with customers. In this guide, we'll build an intelligent chatbot that can understand context, maintain conversation history, and retrieve information from your own documents.</p><h3>Why LangChain?</h3><p>LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). It provides abstractions for chains, agents, memory, and document retrieval — everything you need for a production-ready chatbot.</p><h3>Setting Up the Project</h3><p>Initialize a Python project and install the required packages: <code>langchain</code>, <code>openai</code>, <code>chromadb</code> for vector storage, and <code>tiktoken</code> for token counting. Set your OpenAI API key as an environment variable.</p><h3>Retrieval-Augmented Generation (RAG)</h3><p>RAG combines the power of retrieval systems with generative AI. Instead of relying solely on the LLM's training data, we feed it relevant documents from our own knowledge base. This dramatically reduces hallucinations and keeps responses accurate and up-to-date.</p><h3>Building the Pipeline</h3><ul><li>Load and chunk your documents using LangChain's document loaders</li><li>Generate embeddings using OpenAI's embedding model</li><li>Store vectors in ChromaDB for fast similarity search</li><li>Create a retrieval chain that fetches relevant context</li><li>Pass context + user query to GPT for response generation</li></ul><h3>Adding Conversation Memory</h3><p>Use LangChain's <code>ConversationBufferMemory</code> or <code>ConversationSummaryMemory</code> to maintain chat history. This allows the chatbot to reference previous messages and maintain coherent, context-aware conversations.</p><h3>Going to Production</h3><p>Wrap your chatbot in a FastAPI endpoint, add rate limiting and authentication, implement streaming responses for better UX, and deploy on a cloud platform. Monitor usage with LangSmith for observability.</p>"
+  },
+  {
+    "id": 4,
+    "title": "Full Stack Development with Next.js 15 and MongoDB",
+    "excerpt": "Build a production-ready full stack web application using Next.js 15 App Router, Server Components, Server Actions, and MongoDB Atlas for data persistence.",
+    "author": "DevSync Team",
+    "date": "2026-05-10",
+    "category": "Full Stack",
+    "readTime": "10 min",
+    "image": "assets/blog-fullstack.png",
+    "slug": "fullstack-nextjs-mongodb",
+    "content": "<p>Next.js 15 brings powerful features like React Server Components, Server Actions, and Partial Prerendering that fundamentally change how we build full stack applications. Let's build a complete project management app from scratch.</p><h3>Project Architecture</h3><p>We'll use the App Router with a clean folder structure: route groups for authentication and dashboard, shared layouts, and API route handlers for webhook integrations.</p><h3>Setting Up Next.js 15</h3><p>Create a new project with <code>npx create-next-app@latest</code>. Enable TypeScript, ESLint, and Tailwind CSS during setup. Configure your <code>next.config.js</code> for image optimization and environment variables.</p><h3>MongoDB Atlas Integration</h3><p>Set up a free MongoDB Atlas cluster and connect using Mongoose ODM. Define your schemas for Users, Projects, and Tasks with proper validation, indexes, and virtual fields.</p><h3>Server Components & Data Fetching</h3><p>React Server Components run on the server and can directly access your database. No need for API routes for data fetching — just use async/await in your components. This eliminates client-server waterfalls and reduces JavaScript bundle size.</p><h3>Server Actions for Mutations</h3><ul><li>Create, update, and delete operations as Server Actions</li><li>Form validation with Zod schemas</li><li>Optimistic updates for instant UI feedback</li><li>Revalidation strategies with <code>revalidatePath</code> and <code>revalidateTag</code></li></ul><h3>Authentication</h3><p>Implement authentication using NextAuth.js v5 with credentials, Google, and GitHub providers. Protect routes using middleware and session management.</p><h3>Deployment</h3><p>Deploy to Vercel for the best Next.js experience, or use Docker for self-hosting. Set up CI/CD with GitHub Actions for automated testing and deployment.</p>"
+  },
+  {
+    "id": 5,
+    "title": "Smart Home Automation with Raspberry Pi and Python",
+    "excerpt": "Create an intelligent home automation system using Raspberry Pi, Python, GPIO sensors, and a custom web dashboard for monitoring and control.",
+    "author": "DevSync Team",
+    "date": "2026-05-05",
+    "category": "IoT",
+    "readTime": "6 min",
+    "image": "assets/blog-embedded.png",
+    "slug": "smart-home-raspberry-pi",
+    "content": "<p>Transform your home into a smart home using just a Raspberry Pi and some affordable sensors. In this project, we'll build a complete home automation system with temperature monitoring, motion detection, and remote control capabilities.</p><h3>Hardware Setup</h3><ul><li>Raspberry Pi 4 (2GB or more)</li><li>DHT22 temperature/humidity sensor</li><li>PIR motion sensor</li><li>Relay module for controlling appliances</li><li>5V power supply</li></ul><h3>Setting Up the Raspberry Pi</h3><p>Flash Raspberry Pi OS Lite to an SD card using the Raspberry Pi Imager. Enable SSH and Wi-Fi during the imaging process. Boot up and update your system with <code>sudo apt update && sudo apt upgrade</code>.</p><h3>GPIO Programming with Python</h3><p>Use the <code>RPi.GPIO</code> or <code>gpiozero</code> library to interact with sensors. Create a Python script that reads temperature data every minute, detects motion events, and controls relay switches based on automation rules.</p><h3>Building the Web Dashboard</h3><p>Create a Flask web application that displays real-time sensor data using WebSockets. Use Chart.js for visualizing temperature and humidity trends over time. Add toggle buttons for controlling connected appliances remotely.</p><h3>Automation Rules</h3><p>Implement rule-based automation: turn on fans when temperature exceeds 30°C, send email alerts on motion detection at night, and schedule lights based on sunrise/sunset times. Store rules in a SQLite database for persistence.</p><h3>Remote Access</h3><p>Set up a reverse proxy with Nginx and use a service like Cloudflare Tunnel for secure remote access to your dashboard from anywhere in the world, without exposing your home network.</p>"
+  },
+  {
+    "id": 6,
+    "title": "CI/CD Pipeline Automation with Jenkins and Docker",
+    "excerpt": "Master the art of continuous integration and delivery by building an automated pipeline with Jenkins, Docker, and automated testing frameworks.",
+    "author": "DevSync Team",
+    "date": "2026-04-28",
+    "category": "DevOps",
+    "readTime": "9 min",
+    "image": "assets/blog-devops.png",
+    "slug": "cicd-jenkins-docker",
+    "content": "<p>A well-designed CI/CD pipeline is the backbone of modern software delivery. In this guide, we'll build a complete pipeline that automatically builds, tests, and deploys your applications using Jenkins and Docker.</p><h3>Why CI/CD Matters</h3><p>Continuous Integration ensures that code changes are automatically tested and validated. Continuous Delivery takes it further by automating the deployment process. Together, they reduce bugs, speed up releases, and improve team productivity.</p><h3>Setting Up Jenkins</h3><p>Deploy Jenkins using Docker Compose for a clean, reproducible setup. Mount volumes for persistence, configure the initial admin user, and install essential plugins: Pipeline, Docker Pipeline, Git, and Blue Ocean for a modern UI.</p><h3>Writing the Jenkinsfile</h3><p>Use declarative pipeline syntax for clarity. Define stages for your pipeline:</p><ul><li><strong>Checkout:</strong> Pull the latest code from your Git repository</li><li><strong>Build:</strong> Compile code and build Docker images</li><li><strong>Test:</strong> Run unit tests, integration tests, and code quality checks</li><li><strong>Security Scan:</strong> Scan Docker images for vulnerabilities using Trivy</li><li><strong>Push:</strong> Push verified images to your container registry</li><li><strong>Deploy:</strong> Deploy to staging or production environments</li></ul><h3>Docker Multi-Stage Builds</h3><p>Use multi-stage Dockerfiles to create optimized production images. The build stage includes all dev dependencies, while the production stage only contains the compiled application and runtime dependencies, keeping images small and secure.</p><h3>Automated Testing</h3><p>Integrate testing frameworks like pytest (Python), Jest (JavaScript), or JUnit (Java). Configure test reports to display in Jenkins with trend graphs. Set quality gates that prevent deployment if tests fail or code coverage drops below thresholds.</p><h3>Notifications & Monitoring</h3><p>Configure Slack or email notifications for pipeline status. Set up Prometheus and Grafana dashboards to monitor build times, success rates, and deployment frequency. These metrics help you continuously improve your development process.</p>"
+  }
+]

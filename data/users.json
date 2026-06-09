@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@devsynclabs.in",
+    "password": "devsync2026",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Demo User",
+    "email": "demo@devsynclabs.in",
+    "password": "demo1234",
+    "role": "user"
+  }
+]

@@ -353,8 +353,8 @@ function initLoginPage() {
     });
   }
 
-  // Form submission
-  loginForm.addEventListener('submit', (e) => {
+  // Form submission — validate against users.json
+  loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = document.getElementById('login-email').value.trim();
@@ -365,17 +365,40 @@ function initLoginPage() {
       return;
     }
 
-    // Simulated login (GitHub Pages = static, no real auth)
     const submitBtn = loginForm.querySelector('.login-btn');
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      showToast('Welcome back! Redirecting...', 'success');
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 1500);
-    }, 1500);
+    try {
+      const response = await fetch('data/users.json');
+      const users = await response.json();
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        // Store logged-in user in sessionStorage
+        sessionStorage.setItem('loggedInUser', JSON.stringify({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role
+        }));
+
+        showToast(`Welcome back, ${user.name}! Redirecting...`, 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1500);
+      } else {
+        showToast('Invalid email or password. Please try again.', 'error');
+        submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+        submitBtn.disabled = false;
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      showToast('Something went wrong. Please try again.', 'error');
+      submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+      submitBtn.disabled = false;
+    }
   });
 }
 
